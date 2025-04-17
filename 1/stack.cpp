@@ -31,17 +31,14 @@ public:
     Stack() : top(nullptr) {}
     ~Stack() { clearStack(); }
 
-    // Ïðîâåðêà íà ïóñòîòó ñòåêà
     bool isEmpty() const { return top == nullptr; }
 
-    // Äîáàâëåíèå ýëåìåíòà â ñòåê
     void push(int value) {
         TNode* newNode = new TNode(value);
         newNode->next = top;
         top = newNode;
     }
 
-    // Óäàëåíèå ýëåìåíòà èç ñòåêà
     bool pop() {
         if (isEmpty()) return false;
 
@@ -51,14 +48,12 @@ public:
         return true;
     }
 
-    // Ïîëó÷åíèå äàííûõ âåðøèíû ñòåêà
     bool peek(int& value) const {
         if (isEmpty()) return false;
         value = top->data;
         return true;
     }
 
-    // Âûâîä ñîäåðæèìîãî ñòåêà
     string toString() const {
         if (isEmpty()) return "Ñòåê ïóñò!";
 
@@ -74,14 +69,12 @@ public:
         return oss.str();
     }
 
-    // Î÷èñòêà ñòåêà
     void clearStack() {
         while (!isEmpty()) {
             pop();
         }
     }
 
-    // Ïîëó÷åíèå óêàçàòåëÿ íà âåðøèíó ñòåêà
     TNode* getTop() const { return top; }
 
     friend void addElementAndPrintAddress(Stack& stack, int D);
@@ -89,5 +82,5 @@ public:
 
 void addElementAndPrintAddress(Stack& stack, int D) {
     stack.push(D);
-    std::cout << "Àäðåñ íîâîé âåðøèíû ñòåêà: " << stack.getTop() << std::endl;
+    std::cout << "Адрес новой вершины стека: " << stack.getTop() << std::endl;
 }
