@@ -77,7 +77,7 @@ public:
     string toString() const {
         if (isEmpty()) return "Очередь пуста";
 
-        std::ostringstream oss;
+        ostringstream oss;
         TNode* current = head;
         while (current != nullptr) {
             oss << current->data << " ";
@@ -108,7 +108,7 @@ public:
     }
 
     string extractUntilEven() {
-        std::ostringstream oss;
+        ostringstream oss;
         int value;
 
         while (!isEmpty() && (head->data % 2 != 0)) {
@@ -125,7 +125,7 @@ public:
     }
 };
 
-bool isNumber(const std::string& str) {
+bool isNumber(const string& str) {
     if (str.empty()) return false;
     size_t start = (str[0] == '-' || str[0] == '+') ? 1 : 0;
 
