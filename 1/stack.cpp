@@ -55,10 +55,10 @@ public:
     }
 
     string toString() const {
-        if (isEmpty()) return "Ñòåê ïóñò!";
+        if (isEmpty()) return "Стек пуст!";
 
         ostringstream oss;
-        oss << "Ýëåìåíòû ñòåêà: ";
+        oss << "Элементы стека: ";
 
         TNode* current = top;
         while (current != nullptr) {
