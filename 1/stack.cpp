@@ -82,5 +82,5 @@ public:
 
 void addElementAndPrintAddress(Stack& stack, int D) {
     stack.push(D);
-    std::cout << "Адрес новой вершины стека: " << stack.getTop() << std::endl;
+    cout << "Адрес новой вершины стека: " << stack.getTop() << std::endl;
 }
